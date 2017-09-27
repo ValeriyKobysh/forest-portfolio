@@ -7,11 +7,64 @@
     <meta content="" name="keywords">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/index.min.css">
   </head>
   <body>
-    <h1>Lorem ipsum dolor sit amet.</h1>
-    <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Это деревни встретил жизни рыбными маленький дорогу живет залетают предложения.</p>
+    <section class="s-welcome" style="background-image: url(img/index-bg.png);">
+      <div class="s-welcome__top">
+        <button class="s-welcome__log">Авторизация</button>
+      </div>
+      <div class="s-welcome__middle">
+        <div class="s-welcome__flipper">
+          <div class="s-welcome__card"><span class="s-welcome__avatar"><img src="img/avatar.png" alt=""></span><span class="s-welcome__name">Владимир Астахов</span><span class="s-welcome__metier">Личный сайт веб разработчика</span>
+            <div class="s-welcome__social">
+              <ul class="social__list">
+                <li class="social__item"><a class="social__link" href="vk.com">
+                    <svg class="social__icon social__icon_opacity" height="17" width="35">
+                      <use xlink:href="img/soc-icon-sprite.svg#vk"></use>
+                    </svg></a></li>
+                <li class="social__item"><a class="social__link" href="https://github.com/">
+                    <svg class="social__icon social__icon_opacity" height="17" width="35">
+                      <use xlink:href="img/soc-icon-sprite.svg#git"></use>
+                    </svg></a></li>
+                <li class="social__item"><a class="social__link" href="https://www.linkedin.com/">
+                    <svg class="social__icon social__icon_opacity" height="17" width="35">
+                      <use xlink:href="img/soc-icon-sprite.svg#in"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+            <ul class="s-welcome__link-list">
+              <li class="s-welcome__link-item"><a class="s-welcome__link-link" href="portfolio.html">Мои работы</a></li>
+              <li class="s-welcome__link-item"><a class="s-welcome__link-link" href="about.html">Обо мне</a></li>
+              <li class="s-welcome__link-item"><a class="s-welcome__link-link" href="blog.html">Блог</a></li>
+            </ul>
+          </div>
+          <form class="s-welcome__form"><span class="s-welcome__form-title">Авторизуйтесь</span>
+            <div class="s-welcome__form-wrap">
+              <input class="s-welcome__form-input" id="login" type="text" placeholder="Логин">
+              <label class="s-welcome__form-lbl" for="login">
+                <svg width="15" height="15">
+                  <use xlink:href="img/auth-form-sprite.svg#login"></use>
+                </svg>
+              </label>
+            </div>
+            <div class="s-welcome__form-wrap">
+              <input class="s-welcome__form-input" id="password" type="password" placeholder="Пароль">
+              <label class="s-welcome__form-lbl" for="password">
+                <svg width="15" height="15">
+                  <use xlink:href="img/auth-form-sprite.svg#password"></use>
+                </svg>
+              </label>
+            </div>
+            <ul class="s-welcome__form-links">
+              <li class="s-welcome__form-item"><a class="s-welcome__form-link" href="javascript:;">На главную</a></li>
+              <li class="s-welcome__form-item"><a class="s-welcome__form-link" href="javascript:;">Войти</a></li>
+            </ul>
+          </form>
+        </div>
+      </div>
+      <div class="s-welcome__bot">© Владимир Астахов | создано с любовью в LoftSchool | 2016</div>
+    </section>
+    <script src="js/index.js"></script>
   </body>
 </html>

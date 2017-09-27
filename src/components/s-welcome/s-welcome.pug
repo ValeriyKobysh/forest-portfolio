@@ -1,0 +1,34 @@
+section.s-welcome(style="background-image: url(img/index-bg.png)")
+    .s-welcome__top
+        button.s-welcome__log Авторизация
+    .s-welcome__middle
+        .s-welcome__flipper
+            .s-welcome__card
+                span.s-welcome__avatar
+                    img(src=owner.avatar, alt="")
+                span.s-welcome__name #{owner.name}
+                span.s-welcome__metier #{owner.metier}
+                .s-welcome__social
+                    - var socialModificator = 'opacity'
+                    include ../social/social
+                ul.s-welcome__link-list
+                    each item in linkCard
+                        li.s-welcome__link-item
+                            a.s-welcome__link-link(href=item.link) #{item.title}
+            form.s-welcome__form
+                span.s-welcome__form-title Авторизуйтесь
+                .s-welcome__form-wrap
+                    input.s-welcome__form-input(id="login" type="text" placeholder="Логин")
+                    label.s-welcome__form-lbl(for="login")
+                        svg(width="15" height="15")
+                            use(xlink:href="img/auth-form-sprite.svg#login")
+                .s-welcome__form-wrap
+                    input.s-welcome__form-input(id="password" type="password" placeholder="Пароль")
+                    label.s-welcome__form-lbl(for="password")
+                        svg(width="15" height="15")
+                            use(xlink:href="img/auth-form-sprite.svg#password")
+                ul.s-welcome__form-links
+                    each item in linkForm
+                        li.s-welcome__form-item
+                            a.s-welcome__form-link(href=item.link) #{item.title}
+    .s-welcome__bot © Владимир Астахов | создано с любовью в LoftSchool | 2016

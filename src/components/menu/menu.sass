@@ -1,0 +1,87 @@
+.menu
+    position: absolute
+    left: 0
+    top: 0
+    +size(100%)
+    visibility: hidden
+
+    &__list
+        list-style-type: none
+        position: relative
+        +size(100%)
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        overflow: hidden
+
+        &:before, &:after
+            content: ""
+            position: absolute
+            top: 0
+            +size(50%, 100%)
+            display: flex
+            background-color: rgba($green-light-color, .87)
+            z-index: 100
+            +transition()
+
+        &:before
+            left: -100%
+        
+        &:after
+            right: -100%
+
+    &__item
+        position: relative
+        z-index: 101
+        margin-bottom: 15px
+        opacity: 0
+        transform: scale(1.15) translateY(-30px)
+        transition: transform 0.5s $cubic, opacity 0.6s $cubic
+
+    &__link
+        color: $text-light-color
+        text-decoration: none
+        font-size: rem(63px)
+        letter-spacing: 1.57px
+        +fonts
+        text-transform: uppercase
+        position: relative
+
+        &:before, &:after
+            content: ""
+            position: absolute
+            bottom: 0
+            display: flex
+            +size(0, 3px)
+            background-color: $white-color
+            +transition()
+
+        &:before
+            left: 50%
+        
+        &:after
+            right: 50%
+
+        &:hover, &:active
+
+            &:before, &:after
+                width: 45px
+
+    &.active
+        visibility: visible
+
+        .menu__list
+
+            &:before
+                left: 0
+
+            &:after
+                right: 0
+
+        .menu__item
+            transform: scale(1) translateY(0px)
+            opacity: 1
+            @for $i from 1 through $menuItems 
+                &:nth-child(#{$i}) 
+                    transition-delay: #{0.2 * $i+0.2}s

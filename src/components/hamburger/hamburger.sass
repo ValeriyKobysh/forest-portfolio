@@ -1,0 +1,45 @@
+.gamburger
+    border: 0
+    background-color: transparent
+    +size(40px)
+    outline: none
+    cursor: pointer
+    position: relative
+    z-index: 1000
+
+    & > span, & > span:before, & > span:after
+        display: block
+        +size(40px, 4px)
+        border-radius: 2px
+        
+    & > span 
+        position: relative
+        background-color: rgba($white-color, 1)
+        transition: all 0ms 300ms
+
+        &.active 
+            background-color: transparent
+
+            &:before 
+                bottom: 0
+                transform: rotate(-45deg)
+                transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+
+            &:after 
+                top: 0
+                transform: rotate(45deg)
+                transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+
+        &:before, &:after 
+            content: ""
+            position: absolute
+            left: 0
+            background-color: rgba($white-color, 1)
+
+        &:before
+            bottom: 12px
+            transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+
+        &:after 
+            top: 12px
+            transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)

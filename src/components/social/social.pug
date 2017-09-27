@@ -1,0 +1,17 @@
+- 
+    var socialIcons = [
+        { "id": "vk", "link": "vk.com" },
+        { "id": "git", "link": "https://github.com/" },
+        { "id": "in", "link": "https://www.linkedin.com/" }]
+
+ul.social__list
+    each item in socialIcons
+        li.social__item
+            a.social__link(href=item.link)
+                - if(socialModificator)
+                    svg.social__icon(height="17" width="35" class="social__icon_" + socialModificator)
+                        use(xlink:href="img/soc-icon-sprite.svg#" + item.id)
+                - else
+                    svg.social__icon(height="17" width="35")
+                        use(xlink:href="img/soc-icon-sprite.svg#" + item.id)
+                    

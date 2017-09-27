@@ -1,0 +1,23 @@
+header.header(style="background-image: url(img/index-bg.png)")
+
+    .header__top
+
+        .header__social
+            - var socialModificator = 'light'
+            include ../social/social
+
+        .header__menu
+            include ../hamburger/hamburger
+            include ../menu/menu
+
+    .header__content
+
+        .header__avatar
+            img(src="img/avatar.png", alt="")
+
+        h1.header__heading Блог
+
+        span.header__desc Статьи, которые я написал
+    
+    .header__bot
+        a.header__scroll.js-next-slide(href="javascript:;")

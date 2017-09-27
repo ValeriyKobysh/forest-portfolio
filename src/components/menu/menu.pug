@@ -1,0 +1,24 @@
+- 
+    var menuItems= [
+        {
+            "title": 'Главная',
+            "home": 'index.html'
+        }, 
+        {
+            "title": 'Обо мне',
+            "home": 'about.html'
+        },
+        {
+            "title": 'Мои работы',
+            "home": 'portfolio.html'
+        },
+        {
+            "title": 'Блог',
+            "home": 'blog.html'
+        }]
+
+nav.menu.js-menu
+    ul.menu__list
+        each item in menuItems
+            li.menu__item
+                a.menu__link(href=item.home) #{item.title}

@@ -10,10 +10,12 @@ const paths = {
     root: './dist',
     templates: {
         pages: 'src/views/*.pug',
+        watch: 'src/**/*.pug',
         dist: 'dist/'
     },
     styles: {
-        source: './src/**/*.sass',
+        source: './src/sass/index.sass',
+        watch: 'src/**/*.sass',
         dist: 'dist/css'
     },
     images: {
@@ -21,12 +23,16 @@ const paths = {
         dist: 'dist/img'
     },
     typescript: {
-        source: './src/ts/*.ts',
+        source: './src/ts/index.ts',
         dist: 'dist/js'
     },
+    fonts: {
+        source: './src/fonts/**/*.*',
+        dist: 'dist/fonts'
+    },
     script: {
-        source: './src/js/*.js',
-        entryPoint: './src/js/main.js',
+        source: './src/**/*.js',
+        entryPoint: './src/js/index.js',
         dist: 'dist/js'
     }
 }
@@ -102,19 +108,38 @@ const imagemin = require('gulp-imagemin'),
 */
 function images() {
     return gulp.src(paths.images.source)
-        .pipe(imagemin({
+        // .pipe(imagemin({
 
-        }))
+        // }))
         .pipe(gulp.dest(paths.images.dist));
+}
+/* ***FONTS***
+*/
+function fonts() {
+    return gulp.src(paths.fonts.source)
+        .pipe(gulp.dest(paths.fonts.dist));
 }
 /**
 * TYPESCRIPTS
 */
 function typescripts() {
     return gulp.src(paths.typescript.source)
-        .pipe(ts({
-
+        .pipe(plumber({
+            errorHandler: notify.onError(function (error) {
+                return {
+                    title: "TypeScript",
+                    message: error.message
+                };
+            })
         }))
+        .pipe(ts({
+            target: 'ES5',
+            sourceMap: true,
+            noImplicitAny: true,
+            removeComments: true,
+            moduleResolution: 'classic'
+        }))
+        .pipe(notify("TypeScript is done"))
         .pipe(gulp.dest(paths.typescript.dist))
 }
 const gulpwebpack = require('gulp-webpack'),
@@ -140,11 +165,12 @@ function clear() {
 * ***WATCH SOURCE FILES***
 */
 function watch() {
-    gulp.watch(paths.styles.source, stylesDev);
-    gulp.watch(paths.templates.pages, templates);
+    gulp.watch(paths.styles.watch, stylesDev);
+    gulp.watch(paths.templates.watch, templates);
     gulp.watch(paths.images.source, images);
     gulp.watch(paths.script.source, scriptsJS);
     gulp.watch(paths.typescript.source, typescripts);
+    gulp.watch(paths.fonts.source, fonts);
 }
 /**
 * ***WATCH BUILD FILES AND RELOAD BROWSER***
@@ -164,15 +190,16 @@ exports.clear = clear;
 exports.images = images;
 exports.typescripts = typescripts;
 exports.scriptsJS = scriptsJS;
+exports.fonts = fonts;
 exports.server = server;
 exports.watch = watch;
 
 gulp.task('default', gulp.series(
-    gulp.parallel(stylesDev, templates, images, typescripts, scriptsJS),
+    gulp.parallel(stylesDev, templates, images, scriptsJS, fonts),
     gulp.parallel(watch, server)
 ));
 
 gulp.task('build', gulp.series(
     clear,
-    gulp.parallel(stylesBuild, templates, images, typescripts, scriptsJS)
+    gulp.parallel(stylesBuild, templates, images, scriptsJS, fonts)
 ));
