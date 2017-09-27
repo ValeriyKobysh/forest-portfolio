@@ -1,0 +1,17 @@
+extends ../templates/main
+block variables
+    - var title = "Главная"
+    - var owner = {"name": "Владимир Астахов", "metier": "Личный сайт веб разработчика", "avatar": "img/avatar.png"}
+    - 
+        var linkCard = [
+            { "title":  "Мои работы", "link": "portfolio.html" },
+            { "title":  "Обо мне", "link": "about.html" },
+            { "title":  "Блог", "link": "blog.html" }] 
+    - 
+        var linkForm = [
+            { "title":  "На главную", "link": "javascript:;" },
+            { "title":  "Войти", "link": "javascript:;" }] 
+
+block content
+    include ../components/s-welcome/s-welcome
+block append js
