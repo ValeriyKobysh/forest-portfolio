@@ -1,0 +1,45 @@
+.footer
+
+    &__columns
+        background-color: rgba($text-dark-color, .85)
+        display: flex
+        flex-wrap: wrap
+
+    &__column
+        box-sizing: border-box
+        color: rgba($text-light-color, .5)
+
+        &_italic
+            font-style: italic
+
+        &_bold
+            font-weight: 700
+
+    &__menu
+        margin-bottom: 20px
+
+        &-list
+            display: flex
+            list-style-type: none
+
+        &-link
+            text-decoration: none
+            color: $text-light-color
+            font-weight: 700
+            +transition()
+
+            &:hover, &:active
+                color: rgba($text-light-color, .7)
+
+    &__social
+        width: 120px
+
+    &__copyright
+        background-color: rgba($green-light-color, .85)
+        padding: 0 15px
+        min-height: 36px
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+        color: $text-light-color

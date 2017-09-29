@@ -9,3 +9,6 @@ gulp
 
 ## Running the build
 gulp build
+
+## GitHub Pages ###
+https://valeriykobysh.github.io/forest-portfolio/dist

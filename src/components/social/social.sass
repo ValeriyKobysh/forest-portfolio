@@ -18,11 +18,14 @@
         max-width: 35px
         +transition(fill)
 
-        &:active, &:hover
-            fill: $hover-color
-
         &_light
             fill: $white-color
 
+            &:active, &:hover
+                fill: $hover-color
+
         &_opacity
             fill: rgba($white-color, .5)
+
+            &:active, &:hover
+                fill: $white-color

@@ -1,0 +1,44 @@
+.s-blog
+    display: flex
+    justify-content: center
+    background-color: $body-color
+    color: $text-blog-color
+    padding-top: 60px
+    padding-bottom: 60px
+    width: 100%
+    position: relative
+
+    &__articles
+
+    
+.article
+    position: relative
+
+    &:after
+        content: ""
+        position: absolute
+        left: 0
+        bottom: 0
+        display: flex
+        width: 680px
+        height: 5px
+        background-color: darken($body-color, 5%)
+
+    &:last-child
+        padding-bottom: 0
+        margin-bottom: 0
+
+        &:after
+            height: 0
+
+    &__title
+        +fonts()
+        font-weight: 400
+        
+    &__date
+        color: rgba($green-light-color, .7)
+        display: flex
+
+    // &__text
+
+        
