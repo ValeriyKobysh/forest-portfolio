@@ -160,10 +160,12 @@ function preloader () {
     function imageLoaded() {
         imagesLoaded++;
         document.querySelector('.preloader__icon-text').textContent = (( ( 100 / imagesCount ) * imagesLoaded ) << 0)
-        if (imagesLoaded >= imagesCount) {
-            preloader.classList.add('load')
-        }
+        // if (imagesLoaded >= imagesCount) {
+        // }
     }
+    window.addEventListener('load', function () {
+        preloader.classList.add('load');
+    })
 }
 
 /***/ }),
