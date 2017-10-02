@@ -150,6 +150,9 @@
         &-wrap
             padding: 0 20px
             display: flex
+            justify-content: center
+            color: $text-light-color
+            font-weight: 500
 
         &-lbl, &-input
             height: 45px
@@ -160,6 +163,7 @@
             display: flex
             align-items: center
             justify-content: center
+            flex-shrink: 0
             width: 45px
             border-top-left-radius: 100px
             border-bottom-left-radius: 100px
@@ -214,3 +218,53 @@
     &__bot
         text-align: center
         color: $text-light-color
+
+    & input[type="radio"], & input[type="checkbox"]
+        display: none
+
+    & input[type="radio"]:checked, & input[type="checkbox"]:checked
+        & + .s-welcome__lbl_rect:after
+            +size(4px, 6px)
+            border-right: 2px solid $white-color
+            border-bottom: 2px solid $white-color
+            transform: rotate(45deg)
+            top: 6px
+            left: 8px
+
+        & + .s-welcome__lbl_circle:after
+            +size(8px)
+            background-color: $green-light-color
+            border-radius: 50%
+            top: 7px
+            left: 6px
+
+    &__lbl
+        color: $text-light-color
+        font-size: rem(16px)
+        font-weight: 400
+        margin-right: 40px
+        display: flex
+        align-items: center
+        cursor: pointer
+        position: relative
+        padding-left: 30px
+
+        &:last-child
+            margin-right: 0
+
+        &:before, &:after
+            content: ""
+            display: flex
+            position: absolute
+
+        &:before
+            +size(20px)
+            left: 0
+
+        &_rect:before
+            border-radius: 2px
+            background-color: $green-light-color
+        
+        &_circle:before
+            border-radius: 50%
+            background-color: $white-color

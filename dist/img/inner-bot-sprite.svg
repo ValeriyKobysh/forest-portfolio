@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve">
+    <symbol id="left"  viewBox="0 0 888 1000">
+        <path d="M0,0l88.8,15.7V100H0L0,0z"/>
+    </symbol>
+    <symbol id="right" viewBox="0 0 89.1 100">
+        <path d="M0,15.3L89.1,0l0,100H0V15.3z"/>
+    </symbol>
+</svg>
+

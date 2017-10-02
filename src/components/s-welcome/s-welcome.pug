@@ -1,6 +1,6 @@
 section.s-welcome(style="background-image: url(img/index-bg.png)")
     .s-welcome__top
-        button.s-welcome__log Авторизация
+        button.s-welcome__log.js-auth Авторизация
     .s-welcome__middle
         .s-welcome__flipper
             .s-welcome__card
@@ -27,6 +27,15 @@ section.s-welcome(style="background-image: url(img/index-bg.png)")
                     label.s-welcome__form-lbl(for="password")
                         svg(width="15" height="15")
                             use(xlink:href="img/auth-form-sprite.svg#password")
+                .s-welcome__form-wrap
+                    input(type="checkbox" id="no-robot")
+                    label.s-welcome__lbl.s-welcome__lbl_rect(for="no-robot") Я человек
+                .s-welcome__form-wrap Вы точно не робот?
+                .s-welcome__form-wrap
+                    input(type="radio" name='robot' id="true")
+                    label.s-welcome__lbl.s-welcome__lbl_circle(for="true") Да
+                    input(type="radio" name='robot' id="false")
+                    label.s-welcome__lbl.s-welcome__lbl_circle(for="false") Не уверен
                 ul.s-welcome__form-links
                     each item in linkForm
                         li.s-welcome__form-item

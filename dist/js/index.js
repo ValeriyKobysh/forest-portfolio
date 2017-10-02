@@ -69,15 +69,24 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_hamburger_hamburger__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_header_header__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_sidebar_sidebar__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_preloader_preloader__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_s_welcome_s_welcome__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_hamburger_hamburger__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_header_header__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_sidebar_sidebar__ = __webpack_require__(5);
 
 
 
 
-Object(__WEBPACK_IMPORTED_MODULE_0__components_hamburger_hamburger__["a" /* default */])();
-Object(__WEBPACK_IMPORTED_MODULE_2__components_sidebar_sidebar__["a" /* default */])();
+
+
+let flipMenuInstance = new __WEBPACK_IMPORTED_MODULE_1__components_s_welcome_s_welcome__["a" /* default */]('.js-auth');
+    flipMenuInstance.flip('.s-welcome__middle', 'flip');
+
+Object(__WEBPACK_IMPORTED_MODULE_0__components_preloader_preloader__["a" /* default */])();
+
+Object(__WEBPACK_IMPORTED_MODULE_2__components_hamburger_hamburger__["a" /* default */])();
+Object(__WEBPACK_IMPORTED_MODULE_4__components_sidebar_sidebar__["a" /* default */])();
 
 let waitOnLoad = new Promise((resolve, reject) => {
     window.addEventListener('load', () => {
@@ -125,12 +134,62 @@ waitOnLoad
         });
     })
     .then(() => {
-        Object(__WEBPACK_IMPORTED_MODULE_1__components_header_header__["a" /* default */])()
+        Object(__WEBPACK_IMPORTED_MODULE_3__components_header_header__["a" /* default */])()
     })
 
 
 /***/ }),
 /* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = preloader;
+function preloader () {
+    let preloader = document.querySelector('.js-preloader'),
+        images = document.images,
+        imagesCount = images.length,
+        imagesLoaded = 0;
+
+    for (var i = 0; i < imagesCount; i++) {
+        let imageClone = new Image();
+        imageClone.onload = imageLoaded;
+        imageClone.onerror = imageLoaded;
+        imageClone.src = images[i].src;
+    }
+
+    function imageLoaded() {
+        imagesLoaded++;
+        document.querySelector('.preloader__icon-text').textContent = (( ( 100 / imagesCount ) * imagesLoaded ) << 0)
+        if (imagesLoaded >= imagesCount) {
+            preloader.classList.add('load')
+        }
+    }
+}
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class flipMenu {
+    constructor(button) {
+        this.btn = document.querySelector(button);
+    }
+    flip(section, customClass){
+        this.block = document.querySelector(section);
+        this.class = customClass;
+        this.btn.addEventListener('click', () => {
+            this.btn.style.visibility = 'hidden';
+            this.block.classList.toggle(this.class);
+        })
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = flipMenu;
+
+
+
+/***/ }),
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -152,7 +211,7 @@ function menu(){
 }
 
 /***/ }),
-/* 2 */
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -179,7 +238,7 @@ function scrollNextBlock(){
 }
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

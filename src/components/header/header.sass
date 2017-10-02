@@ -6,14 +6,22 @@
     position: relative
     display: flex
     flex-direction: column
+    box-sizing: border-box
 
-    &:after
+    &:before, &:after
         content: ""
-        display: flex
-        +size(100vw, 200px)
         position: absolute
         left: 0
         bottom: 0
+        width: 100vw
+
+    &:before
+        height: 35px
+        background-color: $body-color
+
+    &:after
+        height: 135px
+        display: flex
         box-sizing: border-box
         border-left: 50vw solid $body-color
         border-right: 50vw solid $body-color
@@ -69,9 +77,28 @@
     &__bot
         height: 200px
         display: flex
-        justify-content: center
-        position: relative
-        z-index: 10
+        flex-direction: column
+        align-items: center
+
+        &-left
+            position: absolute
+            left: 0
+            bottom: 0
+            height: 135px
+
+            & > svg
+                height: 100%   
+
+        &-bg
+            width: 100%
+            position: absolute
+            left: 0
+            bottom: 0
+            display: flex
+            justify-content: space-between
+
+            & > *
+                
 
     &__scroll
         +size(20px)

@@ -1,0 +1,50 @@
+.preloader
+    position: absolute
+    top: 0
+    left: 0
+    +size(100%)
+    background-color: rgba($green-light-color, .7)
+    z-index: 10
+    display: flex
+    align-items: center
+    justify-content: center
+    +transition($duration: 1s)
+
+    &.load
+        opacity: 0
+        visibility: hidden
+
+    &__icon-text
+        fill: $text-light-color
+
+    &__icon-line
+        stroke: $white-color
+        fill: transparent
+        stroke-dashoffset: 100
+        stroke-dasharray: 100
+        animation-name: dash
+        animation-duration: 3s
+        animation-iteration-count: infinite
+        animation-timing-function: linear
+
+@-moz-keyframes dash
+    0%
+        stroke-dashoffset: 100
+        stroke-dasharray: 100
+
+    50%
+        stroke-dasharray: 200
+
+    100%
+        stroke-dashoffset: -100
+
+@-webkit-keyframes dash
+    0%
+        stroke-dashoffset: 100
+        stroke-dasharray: 100
+
+    50%
+        stroke-dasharray: 200
+        
+    100%
+        stroke-dashoffset: -100

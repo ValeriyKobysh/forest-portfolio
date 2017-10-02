@@ -1,6 +1,13 @@
+import preloader from './../components/preloader/preloader'
+import flipMenu from './../components/s-welcome/s-welcome';
 import menu from './../components/hamburger/hamburger';
 import scrollToNextBlock from './../components/header/header';
 import sidebar from './../components/sidebar/sidebar';
+
+let flipMenuInstance = new flipMenu('.js-auth');
+    flipMenuInstance.flip('.s-welcome__middle', 'flip');
+
+preloader();
 
 menu();
 sidebar();
