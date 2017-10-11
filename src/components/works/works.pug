@@ -1,0 +1,72 @@
+main.works.js-next-block
+    .works__header
+        .works__header-wrap
+            svg.works__icon: use(xlink:href="img/works_header.svg#works-icon")
+            h1.works__heading Мои работы
+
+    section.works__slider
+        .works__slider-about
+            h3.works__slider-title.js-slider-title
+            span.works__slider-tags.js-slider-tags
+            a.works__slider-link.js-slider-link(href="") 
+                img(src="img/link.svg", alt="")
+                | Подробнее
+
+        .works__slider-main: img.js-slider-main(src="" alt="")
+
+        .works__slider-controls
+            .works__slider-control.works__slider-control_prev
+                img.js-slider-prev(src="", alt="")
+                span.works__slider-control-bg
+                    span.works__slider-control-chevron
+
+            .works__slider-control.works__slider-control_next
+                img.js-slider-next(src="", alt="")
+                span.works__slider-control-bg
+                    span.works__slider-control-chevron
+
+    section.works__about(style="background-image: url(img/works-about-bg.png)")
+        .works__header-wrap
+            svg.works__icon: use(xlink:href="img/works_header.svg#about-icon")
+            h1.works__heading Что обо мне говорят
+
+        ul.works__reviews
+            li.works__review
+                svg.works__review-quote(width="75" height="61")
+                    use(xlink:href="img/left-quote.svg#quote-icon")
+                span.works__review-avatar
+                    img(src="img/review-avatar.png", alt="")
+                span.works__review-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                span.works__review-name Ковальчук Дмитрий
+                span.works__review-position — основатель Loftschool
+
+            li.works__review
+                svg.works__review-quote(width="75" height="61")
+                    use(xlink:href="img/left-quote.svg#quote-icon")
+                span.works__review-avatar
+                    img(src="img/review-avatar.png", alt="")
+                span.works__review-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                span.works__review-name Ковальчук Дмитрий
+                span.works__review-position — основатель Loftschool
+
+        form.works__callback
+            .works__callback-bg(style="background-image: url(img/works-about-bg.png)")
+            span.works__callback-heading Связаться со мной
+
+            .works__callback-wrap
+                input.works__callback-input(type="text" placeholder="Имя")
+
+            .works__callback-wrap
+                input.works__callback-input(type="email" placeholder="Email")
+
+            .works__callback-wrap
+                textarea.works__callback-textarea(type="email" placeholder="Ваше сообщение")
+
+            .works__callback-buttons
+                button.works__callback-button(type="button") Отправить
+                button.works__callback-button(type="button") Очистить
+
+        .works__totop
+            a.works__scroll.js-scroll-first-block(href="javascript:;")
+
+        include ../footer/footer

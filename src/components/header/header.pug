@@ -14,17 +14,13 @@ header.header.js-start-block(style="background-image: url(img/index-bg.png)")
 
         .header__avatar
             img(src="img/avatar.png", alt="")
-
-        h1.header__heading Блог
-
-        span.header__desc Статьи, которые я написал
+        case title
+            when "Блог"
+                h1.header__heading Блог
+                span.header__desc Статьи, которые я написал
+            when "Мои работы"
+                span.header__name Владимир Астахов
+                span.header__desc Личный сайт веб разработчика
     
     .header__bot
         a.header__scroll.js-scroll-next-block(href="javascript:;")
-        //- .header__bot-left
-        //-     //- svg.header__bot-bg()
-        //-     svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="900.006px" height="1013.986px" viewBox="0 0 900.006 1013.986" enable-background="new 0 0 900.006 1013.986" xml:space="preserve")
-        //-         path(d="M0.01,0l899.997,159.008v854.979H0L0.01,0z")
-
-                //- use(xlink:href="img/inner-bot-sprite.svg#left")
-            //- use(xlink:href="img/inner-bot-sprite.svg#right")

@@ -51,46 +51,102 @@
         </div>
       </div>
       <div class="header__content">
-        <div class="header__avatar"><img src="img/avatar.png" alt=""></div>
-        <h1 class="header__heading">Блог</h1><span class="header__desc">Статьи, которые я написал</span>
+        <div class="header__avatar"><img src="img/avatar.png" alt=""></div><span class="header__name">Владимир Астахов</span><span class="header__desc">Личный сайт веб разработчика</span>
       </div>
       <div class="header__bot"><a class="header__scroll js-scroll-next-block" href="javascript:;"></a></div>
     </header>
-    <footer class="footer">
-      <div class="footer__columns">
-        <div class="footer__column">Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. </div>
-        <div class="footer__column">
-          <nav class="footer__menu">
-            <ul class="footer__menu-list">
-              <li class="footer__menu-item"><a class="footer__menu-link" href="index.html">Главная</a></li>
-              <li class="footer__menu-item"><a class="footer__menu-link" href="about.html">Обо мне</a></li>
-              <li class="footer__menu-item"><a class="footer__menu-link" href="portfolio.html">Мои работы</a></li>
-              <li class="footer__menu-item"><a class="footer__menu-link" href="blog.html">Блог</a></li>
-            </ul>
-          </nav>
-          <div class="footer__social">
-            <ul class="social__list">
-              <li class="social__item"><a class="social__link" href="vk.com">
-                  <svg class="social__icon social__icon_opacity" height="17" width="35">
-                    <use xlink:href="img/soc-icon-sprite.svg#vk"></use>
-                  </svg></a></li>
-              <li class="social__item"><a class="social__link" href="https://github.com/">
-                  <svg class="social__icon social__icon_opacity" height="17" width="35">
-                    <use xlink:href="img/soc-icon-sprite.svg#git"></use>
-                  </svg></a></li>
-              <li class="social__item"><a class="social__link" href="https://www.linkedin.com/">
-                  <svg class="social__icon social__icon_opacity" height="17" width="35">
-                    <use xlink:href="img/soc-icon-sprite.svg#in"></use>
-                  </svg></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer__column footer__column_italic">Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете. 
-          <div class="footer__column_bold">— Martin Golding</div>
+    <main class="works js-next-block">
+      <div class="works__header">
+        <div class="works__header-wrap">
+          <svg class="works__icon">
+            <use xlink:href="img/works_header.svg#works-icon"></use>
+          </svg>
+          <h1 class="works__heading">Мои работы</h1>
         </div>
       </div>
-      <div class="footer__copyright">© Владимир Астахов | Создано с любовью в LoftSchool | 2016</div>
-    </footer>
+      <section class="works__slider">
+        <div class="works__slider-about">
+          <h3 class="works__slider-title js-slider-title"></h3><span class="works__slider-tags js-slider-tags"></span><a class="works__slider-link js-slider-link" href=""> <img src="img/link.svg" alt="">Подробнее</a>
+        </div>
+        <div class="works__slider-main"><img class="js-slider-main" src="" alt=""></div>
+        <div class="works__slider-controls">
+          <div class="works__slider-control works__slider-control_prev"><img class="js-slider-prev" src="" alt=""><span class="works__slider-control-bg"><span class="works__slider-control-chevron"></span></span></div>
+          <div class="works__slider-control works__slider-control_next"><img class="js-slider-next" src="" alt=""><span class="works__slider-control-bg"><span class="works__slider-control-chevron"></span></span></div>
+        </div>
+      </section>
+      <section class="works__about" style="background-image: url(img/works-about-bg.png);">
+        <div class="works__header-wrap">
+          <svg class="works__icon">
+            <use xlink:href="img/works_header.svg#about-icon"></use>
+          </svg>
+          <h1 class="works__heading">Что обо мне говорят</h1>
+        </div>
+        <ul class="works__reviews">
+          <li class="works__review">
+            <svg class="works__review-quote" width="75" height="61">
+              <use xlink:href="img/left-quote.svg#quote-icon"></use>
+            </svg><span class="works__review-avatar"><img src="img/review-avatar.png" alt=""></span><span class="works__review-text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</span><span class="works__review-name">Ковальчук Дмитрий</span><span class="works__review-position">— основатель Loftschool</span>
+          </li>
+          <li class="works__review">
+            <svg class="works__review-quote" width="75" height="61">
+              <use xlink:href="img/left-quote.svg#quote-icon"></use>
+            </svg><span class="works__review-avatar"><img src="img/review-avatar.png" alt=""></span><span class="works__review-text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</span><span class="works__review-name">Ковальчук Дмитрий</span><span class="works__review-position">— основатель Loftschool</span>
+          </li>
+        </ul>
+        <form class="works__callback">
+          <div class="works__callback-bg" style="background-image: url(img/works-about-bg.png);"></div><span class="works__callback-heading">Связаться со мной</span>
+          <div class="works__callback-wrap">
+            <input class="works__callback-input" type="text" placeholder="Имя">
+          </div>
+          <div class="works__callback-wrap">
+            <input class="works__callback-input" type="email" placeholder="Email">
+          </div>
+          <div class="works__callback-wrap">
+            <textarea class="works__callback-textarea" type="email" placeholder="Ваше сообщение"></textarea>
+          </div>
+          <div class="works__callback-buttons">
+            <button class="works__callback-button" type="button">Отправить</button>
+            <button class="works__callback-button" type="button">Очистить</button>
+          </div>
+        </form>
+        <div class="works__totop"><a class="works__scroll js-scroll-first-block" href="javascript:;"></a></div>
+        <footer class="footer">
+          <div class="footer__columns">
+            <div class="footer__column">Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. </div>
+            <div class="footer__column">
+              <nav class="footer__menu">
+                <ul class="footer__menu-list">
+                  <li class="footer__menu-item"><a class="footer__menu-link" href="index.html">Главная</a></li>
+                  <li class="footer__menu-item"><a class="footer__menu-link" href="about.html">Обо мне</a></li>
+                  <li class="footer__menu-item"><a class="footer__menu-link" href="portfolio.html">Мои работы</a></li>
+                  <li class="footer__menu-item"><a class="footer__menu-link" href="blog.html">Блог</a></li>
+                </ul>
+              </nav>
+              <div class="footer__social">
+                <ul class="social__list">
+                  <li class="social__item"><a class="social__link" href="vk.com">
+                      <svg class="social__icon social__icon_opacity" height="17" width="35">
+                        <use xlink:href="img/soc-icon-sprite.svg#vk"></use>
+                      </svg></a></li>
+                  <li class="social__item"><a class="social__link" href="https://github.com/">
+                      <svg class="social__icon social__icon_opacity" height="17" width="35">
+                        <use xlink:href="img/soc-icon-sprite.svg#git"></use>
+                      </svg></a></li>
+                  <li class="social__item"><a class="social__link" href="https://www.linkedin.com/">
+                      <svg class="social__icon social__icon_opacity" height="17" width="35">
+                        <use xlink:href="img/soc-icon-sprite.svg#in"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__column footer__column_italic">Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете. 
+              <div class="footer__column_bold">— Martin Golding</div>
+            </div>
+          </div>
+          <div class="footer__copyright">© Владимир Астахов | Создано с любовью в LoftSchool | 2016</div>
+        </footer>
+      </section>
+    </main>
     <script src="js/index.js"></script>
   </body>
 </html>

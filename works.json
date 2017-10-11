@@ -1,0 +1,28 @@
+{
+    "works": [
+        {
+            "title": "Сайт школы онлайн Образования",
+            "tags": "HTML , CSS, JAVASCRIPT",
+            "link": "https:||",
+            "img": "img/works/work-1.png"
+        },
+        {
+            "title": "Сайт школы онлайн Образования",
+            "tags": "HTML , CSS, JAVASCRIPT",
+            "link": "https:||",
+            "img": "img/works/work-2.png"
+        },
+        {
+            "title": "Сайт школы онлайн Образования",
+            "tags": "HTML , CSS, JAVASCRIPT",
+            "link": "https:||",
+            "img": "img/works/work-3.png"
+        },
+        {
+            "title": "Сайт школы онлайн Образования",
+            "tags": "HTML , CSS, JAVASCRIPT",
+            "link": "https:||",
+            "img": "img/works/work-4.png"
+        }
+    ]
+}

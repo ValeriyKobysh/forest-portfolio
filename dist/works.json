@@ -1,0 +1,28 @@
+{
+    "works": [
+        {
+            "title": "Сайт школы онлайн Образования 1",
+            "tags": "HTML , CSS, JAVASCRIPT",
+            "link": "https://loftschool.com",
+            "img": "img/works/work-1.png"
+        },
+        {
+            "title": "Сайт школы онлайн Образования 2",
+            "tags": "HTML , CSS, JAVASCRIPT",
+            "link": "https://loftschool.com",
+            "img": "img/works/work-2.png"
+        },
+        {
+            "title": "Сайт школы онлайн Образования 3",
+            "tags": "HTML , CSS, JAVASCRIPT",
+            "link": "https://loftschool.com",
+            "img": "img/works/work-3.png"
+        },
+        {
+            "title": "Сайт школы онлайн Образования 4",
+            "tags": "HTML , CSS, JAVASCRIPT",
+            "link": "https://loftschool.com",
+            "img": "img/works/work-4.png"
+        }
+    ]
+}

@@ -30,6 +30,10 @@ const paths = {
         source: './src/fonts/**/*.*',
         dist: 'dist/fonts'
     },
+    libs: {
+        source: '.src/lib/**/*.*',
+        dist: 'dist/lib'
+    },
     script: {
         source: './src/**/*.js',
         entryPoint: './src/js/index.js',
@@ -54,7 +58,7 @@ function templates() {
         .pipe(pug({ pretty: true }))
         .pipe(notify("HTML is done"))
         .pipe(gulp.dest(paths.templates.dist));
-}
+    }
 
 const sass = require('gulp-sass'),
     rename = require('gulp-rename'),
@@ -85,7 +89,8 @@ function stylesDev() {
         .pipe(rename({ suffix: '.min' }))
         .pipe(notify("Styles is done"))
         .pipe(gulp.dest(paths.styles.dist))
-}
+    }
+
 function stylesBuild() {
     return gulp.src(paths.styles.source)
         .pipe(sass({ outputStyle: 'compressed' }))
@@ -97,7 +102,8 @@ function stylesBuild() {
         .pipe(rename({ suffix: '.min' }))
         .pipe(gzip())
         .pipe(gulp.dest(paths.styles.dist))
-}
+    }
+
 const imagemin = require('gulp-imagemin'),
     imageminGifsicle = require('imagemin-gifsicle'),
     imageminJpegtran = require('imagemin-jpegtran'),
@@ -112,13 +118,24 @@ function images() {
 
         // }))
         .pipe(gulp.dest(paths.images.dist));
-}
+    }
+/**
+ * LIBS
+ */
+function libs() {
+    return gulp.src(paths.libs.source)
+        // .pipe(imagemin({
+
+        // }))
+        .pipe(gulp.dest(paths.libs.dist));
+    }
+
 /* ***FONTS***
 */
 function fonts() {
     return gulp.src(paths.fonts.source)
         .pipe(gulp.dest(paths.fonts.dist));
-}
+    }
 /**
 * TYPESCRIPTS
 */
@@ -141,10 +158,10 @@ function typescripts() {
         }))
         .pipe(notify("TypeScript is done"))
         .pipe(gulp.dest(paths.typescript.dist))
-}
+    }
 const gulpwebpack = require('gulp-webpack'),
-    webpack = require('webpack');
-webpackConfig = require('./webpack.config.js')
+    webpack = require('webpack'),
+    webpackConfig = require('./webpack.config.js');
 /**
 * SCRIPTS
 */
@@ -152,7 +169,7 @@ function scriptsJS() {
     return gulp.src(paths.script.entryPoint)
         .pipe(gulpwebpack(webpackConfig, webpack))
         .pipe(gulp.dest(paths.script.dist));
-}
+    }
 
 const del = require('del');
 /**
@@ -160,7 +177,7 @@ const del = require('del');
 */
 function clear() {
     return del(paths.root);
-}
+    }
 /**
 * ***WATCH SOURCE FILES***
 */
@@ -171,23 +188,24 @@ function watch() {
     gulp.watch(paths.script.source, scriptsJS);
     gulp.watch(paths.typescript.source, typescripts);
     gulp.watch(paths.fonts.source, fonts);
-}
+    gulp.watch(paths.libs.source, libs);
+    }
 /**
 * ***WATCH BUILD FILES AND RELOAD BROWSER***
 */
 function server() {
     browserSync.init({
         server: paths.root
-    });
+        });
     browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
-}
-
+    }
 
 exports.templates = templates;
 exports.stylesDev = stylesDev;
 exports.stylesBuild = stylesBuild;
 exports.clear = clear;
 exports.images = images;
+exports.libs = libs;
 exports.typescripts = typescripts;
 exports.scriptsJS = scriptsJS;
 exports.fonts = fonts;
@@ -195,11 +213,11 @@ exports.server = server;
 exports.watch = watch;
 
 gulp.task('default', gulp.series(
-    gulp.parallel(stylesDev, templates, images, scriptsJS, fonts),
+    gulp.parallel(stylesDev, templates, images, scriptsJS, fonts, libs),
     gulp.parallel(watch, server)
 ));
 
 gulp.task('build', gulp.series(
     clear,
-    gulp.parallel(stylesBuild, templates, images, scriptsJS, fonts)
+    gulp.parallel(stylesBuild, templates, images, scriptsJS, fonts, libs)
 ));

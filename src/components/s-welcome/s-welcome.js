@@ -5,9 +5,11 @@ export default class flipMenu {
     flip(section, customClass){
         this.block = document.querySelector(section);
         this.class = customClass;
-        this.btn.addEventListener('click', () => {
-            this.btn.style.visibility = 'hidden';
-            this.block.classList.toggle(this.class);
-        })
+        if(this.btn){
+            this.btn.addEventListener('click', () => {
+                this.btn.style.visibility = 'hidden';
+                this.block.classList.toggle(this.class);
+            })
+        }
     }
 }
